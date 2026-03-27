@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "email_subject",
+    "email_html_body"
+  ],
+  "properties": {
+    "email_subject": {
+      "type": "string"
+    },
+    "email_html_body": {
+      "type": "string"
+    }
+  }
+}
