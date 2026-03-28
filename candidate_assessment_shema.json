@@ -2,211 +2,122 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "candidate_profile",
-    "assessment",
-    "decision",
-    "email_brief"
+    "candidate_full_name",
+    "email_inputs",
+    "course_recommendation"
   ],
   "properties": {
-    "candidate_profile": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "motivation_level",
-        "persistence_level",
-        "discipline_level",
-        "logical_fit",
-        "time_capacity",
-        "initiative_level",
-        "mindset_type",
-        "financial_drive",
-        "prior_knowledge_level",
-        "professional_orientation",
-        "end_goal"
-      ],
-      "properties": {
-        "motivation_level": {
-          "type": "string",
-          "enum": ["very_low", "low", "medium", "high", "very_high"]
-        },
-        "persistence_level": {
-          "type": "string",
-          "enum": ["very_low", "low", "medium", "high", "very_high"]
-        },
-        "discipline_level": {
-          "type": "string",
-          "enum": ["very_low", "low", "medium", "high", "very_high"]
-        },
-        "logical_fit": {
-          "type": "string",
-          "enum": ["very_low", "low", "medium", "high", "very_high"]
-        },
-        "time_capacity": {
-          "type": "string",
-          "enum": ["very_low", "low", "medium", "high", "very_high"]
-        },
-        "initiative_level": {
-          "type": "string",
-          "enum": ["very_low", "low", "medium", "high", "very_high"]
-        },
-        "mindset_type": {
-          "type": "string",
-          "enum": ["fixed", "hesitant", "realistic_growth", "strong_growth"]
-        },
-        "financial_drive": {
-          "type": "string",
-          "enum": ["very_low", "low", "medium", "high", "very_high"]
-        },
-        "prior_knowledge_level": {
-          "type": "string",
-          "enum": ["none", "very_basic", "beginner", "lower_intermediate"]
-        },
-        "professional_orientation": {
-          "type": "string",
-          "enum": [
-            "frontend_ui_ux",
-            "backend_logic",
-            "data_systems",
-            "full_stack",
-            "exploratory_unsure"
-          ]
-        },
-        "end_goal": {
-          "type": "string",
-          "enum": [
-            "employment",
-            "improve_current_profession",
-            "startup_product",
-            "own_software_business",
-            "freelancing"
-          ]
-        }
-      }
+    "candidate_full_name": {
+      "type": "string"
     },
-    "assessment": {
+    "email_inputs": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "overall_fit_for_programming",
-        "confidence_level",
-        "summary_assessment",
-        "key_strengths",
-        "key_risks",
-        "main_blockers",
-        "professional_direction_explanation",
-        "realistic_timeframe_assessment",
-        "suitability_explanation"
+        "motivation_score",
+        "motivation_summary",
+        "reasoning_score",
+        "reasoning_summary",
+        "commitment_score",
+        "commitment_summary",
+        "growth_potential_score",
+        "growth_potential_summary",
+        "overall_fit_label",
+        "overall_summary",
+        "career_direction_summary",
+        "timeframe_summary"
       ],
       "properties": {
-        "overall_fit_for_programming": {
+        "motivation_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "motivation_summary": {
+          "type": "string"
+        },
+        "reasoning_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "reasoning_summary": {
+          "type": "string"
+        },
+        "commitment_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "commitment_summary": {
+          "type": "string"
+        },
+        "growth_potential_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "growth_potential_summary": {
+          "type": "string"
+        },
+        "overall_fit_label": {
           "type": "string",
-          "enum": ["very_low", "low", "moderate", "good", "strong"]
+          "enum": [
+            "very_low",
+            "low",
+            "moderate",
+            "good",
+            "strong"
+          ]
         },
-        "confidence_level": {
-          "type": "string",
-          "enum": ["low", "medium", "high"]
-        },
-        "summary_assessment": {
+        "overall_summary": {
           "type": "string"
         },
-        "key_strengths": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 2,
-          "maxItems": 5
-        },
-        "key_risks": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 2,
-          "maxItems": 5
-        },
-        "main_blockers": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1,
-          "maxItems": 4
-        },
-        "professional_direction_explanation": {
+        "career_direction_summary": {
           "type": "string"
         },
-        "realistic_timeframe_assessment": {
-          "type": "string"
-        },
-        "suitability_explanation": {
+        "timeframe_summary": {
           "type": "string"
         }
       }
     },
-    "decision": {
+    "course_recommendation": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "should_recommend_course",
-        "recommendation_status",
         "recommended_course_name",
         "recommended_course_url",
         "recommended_discount_code",
         "recommendation_reason",
-        "alternative_note_if_not_recommended"
+        "non_recommendation_reason"
       ],
       "properties": {
         "should_recommend_course": {
           "type": "boolean"
         },
-        "recommendation_status": {
-          "type": "string",
-          "enum": [
-            "recommend_beginner_course",
-            "recommend_advanced_course",
-            "do_not_recommend_course"
+        "recommended_course_name": {
+          "type": [
+            "string",
+            "null"
           ]
         },
-        "recommended_course_name": {
-          "type": ["string", "null"]
-        },
         "recommended_course_url": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "recommended_discount_code": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "recommendation_reason": {
           "type": "string"
         },
-        "alternative_note_if_not_recommended": {
-          "type": "string"
-        }
-      }
-    },
-    "email_brief": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "opening_context_summary",
-        "detected_potential_summary",
-        "professional_guidance_summary",
-        "perspective_summary",
-        "offer_summary",
-        "closing_micro_message"
-      ],
-      "properties": {
-        "opening_context_summary": {
-          "type": "string"
-        },
-        "detected_potential_summary": {
-          "type": "string"
-        },
-        "professional_guidance_summary": {
-          "type": "string"
-        },
-        "perspective_summary": {
-          "type": "string"
-        },
-        "offer_summary": {
-          "type": "string"
-        },
-        "closing_micro_message": {
+        "non_recommendation_reason": {
           "type": "string"
         }
       }
