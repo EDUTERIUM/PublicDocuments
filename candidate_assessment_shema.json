@@ -89,6 +89,7 @@
         "recommended_course_name",
         "recommended_course_url",
         "recommended_discount_code",
+        "course_type",
         "recommendation_reason",
         "non_recommendation_reason"
       ],
@@ -109,6 +110,12 @@
           ]
         },
         "recommended_discount_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },       
+        "course_type": {
           "type": [
             "string",
             "null"
