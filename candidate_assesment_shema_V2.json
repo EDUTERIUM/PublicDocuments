@@ -1,97 +1,93 @@
 {
-  "name": "candidate_assessment_simple",
-  "strict": true,
-  "schema": {
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "candidate_full_name",
-      "analysis",
-      "course_recommendation"
-    ],
-    "properties": {
-      "candidate_full_name": {
-        "type": "string"
-      },
-      "analysis": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "motivation_score",
-          "motivation_text",
-          "reasoning_score",
-          "reasoning_text",
-          "commitment_score",
-          "commitment_text",
-          "growth_potential_score",
-          "growth_potential_text"
-        ],
-        "properties": {
-          "motivation_score": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100
-          },
-          "motivation_text": {
-            "type": "string"
-          },
-          "reasoning_score": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100
-          },
-          "reasoning_text": {
-            "type": "string"
-          },
-          "commitment_score": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100
-          },
-          "commitment_text": {
-            "type": "string"
-          },
-          "growth_potential_score": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 100
-          },
-          "growth_potential_text": {
-            "type": "string"
-          }
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_full_name",
+    "analysis",
+    "course_recommendation"
+  ],
+  "properties": {
+    "candidate_full_name": {
+      "type": "string"
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "motivation_score",
+        "motivation_text",
+        "reasoning_score",
+        "reasoning_text",
+        "commitment_score",
+        "commitment_text",
+        "growth_potential_score",
+        "growth_potential_text"
+      ],
+      "properties": {
+        "motivation_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "motivation_text": {
+          "type": "string"
+        },
+        "reasoning_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "reasoning_text": {
+          "type": "string"
+        },
+        "commitment_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "commitment_text": {
+          "type": "string"
+        },
+        "growth_potential_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "growth_potential_text": {
+          "type": "string"
         }
-      },
-      "course_recommendation": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "should_recommend_course",
-          "recommended_course_name",
-          "recommended_course_url",
-          "recommended_course_description"
-        ],
-        "properties": {
-          "should_recommend_course": {
-            "type": "boolean"
-          },
-          "recommended_course_name": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "recommended_course_url": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "recommended_course_description": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
+      }
+    },
+    "course_recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "should_recommend_course",
+        "recommended_course_name",
+        "recommended_course_url",
+        "recommended_course_description"
+      ],
+      "properties": {
+        "should_recommend_course": {
+          "type": "boolean"
+        },
+        "recommended_course_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recommended_course_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recommended_course_description": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }
