@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intro_text",
+    "bridge_text"
+  ],
+  "properties": {
+    "intro_text": {
+      "type": "string"
+    },
+    "bridge_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
