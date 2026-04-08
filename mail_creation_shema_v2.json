@@ -2,22 +2,11 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "header_title",
-    "intro_text",
-    "bridge_text"
+    "intro_html"
   ],
   "properties": {
-    "header_title": {
+    "intro_html": {
       "type": "string"
-    },
-    "intro_text": {
-      "type": "string"
-    },
-    "bridge_text": {
-      "type": [
-        "string",
-        "null"
-      ]
     }
   }
 }

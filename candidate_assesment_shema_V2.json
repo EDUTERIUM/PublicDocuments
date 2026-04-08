@@ -3,12 +3,22 @@
   "additionalProperties": false,
   "required": [
     "candidate_full_name",
+    "development_track",
     "analysis",
     "course_recommendation"
   ],
   "properties": {
     "candidate_full_name": {
       "type": "string"
+    },
+    "development_track": {
+      "type": "string",
+      "enum": [
+        "posao_u_it",
+        "freelancer",
+        "proizvod",
+        "vlastiti_biznis"
+      ]
     },
     "analysis": {
       "type": "object",
