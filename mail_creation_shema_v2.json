@@ -2,9 +2,13 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "header_title",
     "intro_html"
   ],
   "properties": {
+    "header_title": {
+      "type": "string"
+    },
     "intro_html": {
       "type": "string"
     }
