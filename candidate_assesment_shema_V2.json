@@ -4,6 +4,7 @@
   "required": [
     "candidate_full_name",
     "development_track",
+    "interest_area",
     "analysis",
     "course_recommendation"
   ],
@@ -18,6 +19,16 @@
         "freelancer",
         "proizvod",
         "vlastiti_biznis"
+      ]
+    },
+    "interest_area": {
+      "type": "string",
+      "enum": [
+        "frontend",
+        "backend",
+        "database",
+        "fullstack",
+        "unknown"
       ]
     },
     "analysis": {
